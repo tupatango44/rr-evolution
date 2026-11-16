@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b0b0c" />
+  <meta name="description" content="RR EVOLUTION — plataforma de entrenamiento y seguimiento personalizado." />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>RR EVOLUTION | Training & Evolution</title>
+</head>
+<body>
+  <div class="demo-ribbon"><span class="pulse"></span> PROTOTIPO DE DEMOSTRACIÓN · No cargar datos reales de alumnos</div>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand-lockup">
+        <div class="brand-mark">RR</div>
+        <div><div class="brand-name">RR EVOLUTION</div><div class="brand-sub">TRAINING & EVOLUTION</div></div>
+      </div>
+      <div class="workspace-label">ESPACIO DE TRABAJO</div>
+      <div class="role-switch">
+        <span class="role-dot"></span>
+        <select id="roleSelect" aria-label="Cambiar vista">
+          <option value="admin">Panel entrenador</option>
+          <option value="student">Vista del alumno</option>
+        </select>
+        <span class="chevron">⌄</span>
+      </div>
+      <nav class="nav-list" id="adminNav">
+        <div class="nav-caption">GESTIÓN</div>
+        <button class="nav-item active" data-view="dashboard"><span class="nav-icon">◫</span>Resumen <span class="nav-arrow">›</span></button>
+        <button class="nav-item" data-view="students"><span class="nav-icon">♙</span>Alumnos <span class="nav-count" id="studentCount">3</span></button>
+        <div class="nav-caption">PLANIFICACIÓN</div>
+        <button class="nav-item" data-view="routines"><span class="nav-icon">▤</span>Rutinas</button>
+        <button class="nav-item" data-view="nutrition"><span class="nav-icon">◉</span>Alimentación</button>
+        <div class="nav-caption">SEGUIMIENTO</div>
+        <button class="nav-item" data-view="progress"><span class="nav-icon">⌁</span>Evolución</button>
+        <button class="nav-item" data-view="messages"><span class="nav-icon">✉</span>Mensajes <span class="nav-count muted">2</span></button>
+      </nav>
+      <nav class="nav-list hidden" id="studentNav">
+        <div class="nav-caption">MI ESPACIO</div>
+        <button class="nav-item active" data-view="studentHome"><span class="nav-icon">◫</span>Inicio</button>
+        <button class="nav-item" data-view="studentRoutine"><span class="nav-icon">▤</span>Mi rutina</button>
+        <button class="nav-item" data-view="studentNutrition"><span class="nav-icon">◉</span>Mi alimentación</button>
+        <button class="nav-item" data-view="studentProgress"><span class="nav-icon">⌁</span>Mi evolución</button>
+        <button class="nav-item" data-view="messages"><span class="nav-icon">✉</span>Mensajes</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="coach-mini"><div class="avatar gold">RR</div><div><strong>Ramiro Ramos</strong><small>Entrenador · Administrador</small></div><span class="online-dot"></span></div>
+        <div class="sidebar-foot">RR EVOLUTION <span>v0.1 · DEMO</span></div>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu" aria-label="Abrir menú">☰</button>
+        <div class="breadcrumb"><span>RR EVOLUTION</span><b>/</b><strong id="pageCrumb">Resumen</strong></div>
+        <div class="top-actions">
+          <span class="top-date" id="todayLabel">LUNES · 16 NOV 2026</span>
+          <button class="icon-button notification-button" aria-label="Notificaciones" id="notificationButton">♧<i></i></button>
+          <div class="top-avatar">RR</div>
+        </div>
+      </header>
+
+      <section class="content" id="content">
+        <!-- Rendered by app.js -->
+      </section>
+      <footer class="mobile-footer">RR EVOLUTION <span>DISCIPLINA · CONSTANCIA · EVOLUCIÓN</span></footer>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <div class="modal-backdrop" id="modalBackdrop" aria-hidden="true"><div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"></div></div>
+  <script src="app.js"></script>
+  <script>if ('serviceWorker' in navigator && location.protocol.startsWith('http')) navigator.serviceWorker.register('./sw.js').catch(()=>{});</script>
+</body>
+</html>
